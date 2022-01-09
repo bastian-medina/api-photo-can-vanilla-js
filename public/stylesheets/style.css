@@ -1,0 +1,248 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/* dando estilo al navbar, sombra */
+.navbar
+{
+  box-shadow: 0 2px 4px  0 rgba(0, 0, 0, .3); /*sombreado*/
+}
+
+p
+{
+  font-size: 18px;
+  color: #999999;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* sombreado de las cards */
+.card
+{
+  box-shadow: 0 2px 4px  0 rgba(0, 0, 0, .3); /*sombreado*/
+
+}
+
+
+h2
+{
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+
+/* estilos del hoover navbar*/
+.nav-link
+{
+  color: #1a1a1a;
+}
+
+.nav-link:hover
+{
+  color: #1a1a1a;
+}
+
+
+
+/* footer principal */
+.site-footer
+{
+  background-color:#26272b;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+
+/* linea footer */
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+
+/* titulo 6  */
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+
+/* link footer */
+.site-footer a
+{
+  color:#737373;
+}
+
+/* hoover */
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+
+/* lista de links */
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+
+/* lista para que sean responsive */
+.footer-links li
+{
+  display:block
+}
+
+/* para que esa lista sea gris */
+.footer-links a
+{
+  color:#737373
+}
+
+/* links de redes sociales */
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+
+/* lista de redes sociales */
+.footer-links.inline li
+{
+  display:inline-block
+}
+
+/* iconos (los redondos) */
+.site-footer .social-icons
+{
+  text-align:right
+}
+
+/* ubicacion de los circulos de redes sociales */
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+
+/*  marca de copyright fachera  */
+.copyright-text
+{
+  margin:0
+}
+
+/* media query para que se ajuste los col a los 991px */
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+
+/* media query para que se ajuste a los 767px */
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+
+/* posicion despues del mediaquery */
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+
+/* ajustes de redes sociales y descripciones 
+cuando la mediaquery se ajusta */
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+
+
+/* hoover redes sociales */
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+
+/* media query para que se ajuste a los 767px lista de objetos descripcion*/
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
