@@ -13,7 +13,31 @@
 
     <div class="row justify-content-center text-center">
         <h2>¡La tarjeta es de <b><%= dog %> </b>!</h2>
-        <p>Presiona sobre la foto para ver una foto aleatoria de un  <%= dog %>  </p>
+        <p>
+            Presiona sobre las opciones para ver una foto aleatoria de  <%= dog %>  
+        </p>
+
+        <div class="row justify-content-center text-center">
+
+
+            <div class="card text-dark bg-light mt-2 mb-3 me-2" style="max-width: 18rem;">
+                <div class="card-header"><center>RAZAS ENCONTRADAS</center></div>
+                <div class="card-body">
+                    <h5 class="card-title"><center><%= myArrayLength  %> </center></h5>
+                </div>
+            </div>
+
+
+            <div class="card text-white bg-secondary mt-2 mb-3 ms-2" style="max-width: 18rem;">
+                <div class="card-header"><center>SUBRAZAS ENCONTRADAS</center></div>
+                <div class="card-body">
+                    <h5 class="card-title"><center><%= myArraySubLenght  %> </center></h5>
+                </div>
+            </div>
+
+
+        </div>
+
 
     </div>
 
@@ -45,9 +69,11 @@
                         <center><%= dog %></center>
                     </h3>
 
-                    <% for(var i=0; i<response.length; i++) { %>
-                        <a class="btn btn-outline-success" type="submit" href="photo/<%= response[i] %>"> <%= response[i] %></a>
-                    <% } %>  
+                    <center>
+                        <% for(var i=0; i<response.length; i++) { %>
+                            <a class="btn btn-outline-success" type="submit" href="photo/<%= response[i] %>"> <%= response[i] %></a>
+                        <% } %>  
+                    </center>
 
                 </div>
             </div>

@@ -45,13 +45,21 @@ router.get('/razaList', function(req, res, next) {
   })
   .then((respuestaConsole)=>{
 
-    
-
 
 
     var myArray = Object.entries(respuestaConsole.message);
-    console.log(myArray);
-    res.render('razaList', { response: myArray });
+    var myArrayLength = myArray.length;
+    var myArraySubLenght = 0;
+
+
+    for (var i = 0; i < myArray.length; i++) {
+      myArraySubLenght = Number(myArraySubLenght) + Number(myArray[i][1].length);
+   }
+
+
+
+    console.log(myArraySubLenght);
+    res.render('razaList', { response: myArray,  myArrayLength: myArrayLength, myArraySubLenght: myArraySubLenght});
 
 
   });
@@ -77,7 +85,19 @@ router.get('/subRazaList', function(req, res, next) {
 
 
     var myArray = Object.entries(respuestaConsole.message);
-    res.render('subRazaList', { response: myArray });
+    var myArrayLength = myArray.length;
+    var myArraySubLenght = 0;
+
+
+    for (var i = 0; i < myArray.length; i++) {
+      myArraySubLenght = Number(myArraySubLenght) + Number(myArray[i][1].length);
+   }
+
+
+   console.log(myArraySubLenght);
+   console.log(myArrayLength);
+
+    res.render('subRazaList', { response: myArray,  myArrayLength:myArrayLength, myArraySubLenght:myArraySubLenght});
 
 
   });
@@ -110,6 +130,8 @@ router.get('/photo/:id', function(req, res) {
 
 });
 
+
+
 router.get('/filterDog/:id', function(req, res) {
 
   var dog = req.params.id;
@@ -122,8 +144,24 @@ router.get('/filterDog/:id', function(req, res) {
   .then((respuestaConsole)=>{
 
     var myArray = respuestaConsole.message;
+    var myArrayLength = 1;
+    var myArraySubLenght = 0;
+
+
+    if(myArray.length == 0){
+      
+      myArraySubLenght = 1;
+
+    }else{
+
+      myArraySubLenght = myArray.length;
+
+    }
+
+
     console.log(myArray);
-    res.render('filterDog', { response: myArray, dog: dog });
+    console.log(myArraySubLenght);
+    res.render('filterDog', { response: myArray, dog: dog, myArrayLength: myArrayLength, myArraySubLenght: myArraySubLenght });
 
 
   });
