@@ -9,7 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 
-//dirige a randomPhoto
+
+
+
+
+//dirige a randomPhoto cargando con la imagen inicial
 router.get('/randomPhoto', function(req, res, next) {
 
   var mascotas = fetch("https://dog.ceo/api/breeds/image/random");
@@ -19,8 +23,8 @@ router.get('/randomPhoto', function(req, res, next) {
   })
   .then((respuestaConsole)=>{
 
+    //retorno la lista
     var myArray = respuestaConsole;
-    console.log(myArray);
     res.render('randomPhoto', { response: myArray });
 
 
@@ -48,16 +52,16 @@ router.get('/razaList', function(req, res, next) {
 
 
     var myArray = Object.entries(respuestaConsole.message);
-    var myArrayLength = myArray.length;
-    var myArraySubLenght = 0;
+    var myArrayLength = myArray.length; //conteno de razas
+    var myArraySubLenght = 0;// conteo de subrazas
 
-
+    //for que me recorre y cuenta las subrazas
     for (var i = 0; i < myArray.length; i++) {
       myArraySubLenght = Number(myArraySubLenght) + Number(myArray[i][1].length);
    }
 
 
-
+    //retorno la lista  
     console.log(myArraySubLenght);
     res.render('razaList', { response: myArray,  myArrayLength: myArrayLength, myArraySubLenght: myArraySubLenght});
 
@@ -85,18 +89,15 @@ router.get('/subRazaList', function(req, res, next) {
 
 
     var myArray = Object.entries(respuestaConsole.message);
-    var myArrayLength = myArray.length;
-    var myArraySubLenght = 0;
+    var myArrayLength = myArray.length;//conteo de razas
+    var myArraySubLenght = 0;//conteo de subrazas
 
-
+    //for que me recorre y cuenta las subrazas
     for (var i = 0; i < myArray.length; i++) {
       myArraySubLenght = Number(myArraySubLenght) + Number(myArray[i][1].length);
    }
 
-
-   console.log(myArraySubLenght);
-   console.log(myArrayLength);
-
+    //retorno la lista
     res.render('subRazaList', { response: myArray,  myArrayLength:myArrayLength, myArraySubLenght:myArraySubLenght});
 
 
@@ -106,8 +107,10 @@ router.get('/subRazaList', function(req, res, next) {
 });
 
 
+//direccion de la foto seleccionada
 router.get('/photo/:id', function(req, res) {
 
+  //rescato la variable del url
   var dog = req.params.id;
 
   var mascotas = fetch("https://dog.ceo/api/breed/"+ dog +"/images/random");
@@ -117,23 +120,22 @@ router.get('/photo/:id', function(req, res) {
   })
   .then((respuestaConsole)=>{
 
+    //retorno la lista
     var myArray = respuestaConsole;
-    console.log(myArray);
     res.render('photo', { response: myArray, dog: dog });
 
 
   });
 
-
-
-
-
 });
 
 
 
+
+//direcion del filtro seleccionado
 router.get('/filterDog/:id', function(req, res) {
 
+  //rescato la variable del url
   var dog = req.params.id;
 
   var mascotas = fetch("https://dog.ceo/api/breed/"+ dog +"/list");
@@ -144,10 +146,13 @@ router.get('/filterDog/:id', function(req, res) {
   .then((respuestaConsole)=>{
 
     var myArray = respuestaConsole.message;
-    var myArrayLength = 1;
-    var myArraySubLenght = 0;
+    var myArrayLength = 1;//conteo razas por defecto
+    var myArraySubLenght = 0;//conteo subrazas
 
-
+    /*
+      si está vacia, solo contará con 1 raza
+      pero si no está vacio, recorrerá la lista para contarlos
+    */
     if(myArray.length == 0){
       
       myArraySubLenght = 1;
@@ -159,8 +164,7 @@ router.get('/filterDog/:id', function(req, res) {
     }
 
 
-    console.log(myArray);
-    console.log(myArraySubLenght);
+    //retorno la lista
     res.render('filterDog', { response: myArray, dog: dog, myArrayLength: myArrayLength, myArraySubLenght: myArraySubLenght });
 
 

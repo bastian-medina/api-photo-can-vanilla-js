@@ -12,6 +12,7 @@ a {
   box-shadow: 0 2px 4px  0 rgba(0, 0, 0, .3); /*sombreado*/
 }
 
+/* formato de los parrafos */
 p
 {
   font-size: 18px;
@@ -27,7 +28,7 @@ p
 
 }
 
-
+/* tamaño de las titulos h2 */
 h2
 {
   font-size: 48px;

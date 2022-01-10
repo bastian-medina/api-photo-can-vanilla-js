@@ -29,7 +29,7 @@ app.use('/', indexRouter);
 app.use('/photo/:id', indexRouter);
 app.use('/users', usersRouter);
 
-// catch 404 and forward to error handler
+// error 404 personalizado
 app.use(function(req, res, next){
   res.status(404);
 
