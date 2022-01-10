@@ -1,0 +1,69 @@
+<%- include('templates/cabecera', {tituloweb: 'Inicio EJS'}); %>
+
+<div class="container">
+    <hr>
+</div>
+
+
+
+<div class="container">
+
+
+    <br><br>
+
+    <div class="row justify-content-center text-center">
+        <h2>¡La tarjeta es de <b><%= dog %> </b>!</h2>
+        <p>Presiona sobre la foto para ver una foto aleatoria de un  <%= dog %>  </p>
+
+    </div>
+
+    <br><br>
+
+
+
+    <div class="row">
+
+
+        <% if(response == ""){ %>
+            
+            <div class="card">
+                <a class="btn" href="../photo/<%= dog  %> ">
+                    <div class="card-body">
+                        <h3 class="card-title"><i class="icon ion-md-paw"></i><center><%= dog %></center></h3>
+                    </div>
+                </a>
+            </div>
+
+        <% } else { %>
+
+
+
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">
+                        <center><i class="icon ion-md-paw"></i></center>
+                        <center><%= dog %></center>
+                    </h3>
+
+                    <% for(var i=0; i<response.length; i++) { %>
+                        <a class="btn btn-outline-success" type="submit" href="photo/<%= response[i] %>"> <%= response[i] %></a>
+                    <% } %>  
+
+                </div>
+            </div>
+
+        <% } %>
+
+
+    </div>
+
+
+
+</div>
+
+
+
+<div class="container">
+    <hr>
+</div>
+<%- include('templates/footer', {tituloweb: 'Inicio EJS'}); %>

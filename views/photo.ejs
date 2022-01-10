@@ -1,0 +1,37 @@
+<%- include('templates/cabecera', {tituloweb: 'Inicio EJS'}); %>
+
+<div class="container">
+    <hr>
+</div>
+
+
+
+<div class="container">
+
+
+    <br><br>
+
+    <div class="row justify-content-center text-center">
+        <h2>¡Foto de <b><%= dog %> </b>!</h2>
+        <p>Esta es una foto aleatoria de <%= dog %>  </p>
+
+    </div>
+
+    <br><br>
+
+    <div class="row justify-content-center text-center">
+        <center>
+            <img src="<%= response.message %> " class="img-fluid" alt="...">
+        </center>
+    </div>
+
+
+
+</div>
+
+
+
+<div class="container">
+    <hr>
+</div>
+<%- include('templates/footer', {tituloweb: 'Inicio EJS'}); %>

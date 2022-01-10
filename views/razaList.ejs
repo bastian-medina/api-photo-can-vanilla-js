@@ -1,0 +1,68 @@
+<%- include('templates/cabecera', {tituloweb: 'Inicio EJS'}); %>
+
+<div class="container">
+    <hr>
+</div>
+
+
+
+
+
+<div class="container">
+
+
+    <br><br>
+
+    <div class="row justify-content-center text-center">
+        <h2>¡Todas las <b>razas</b> de la BD!</h2>
+        <p>Aqui solo se encontrará con los nombres, si desea 
+            ver alguna imagen, presione sobre la tarjeta.</p>
+    </div>
+
+
+    <!-- row de la tupla filtrar -->
+    <div class="row-12">
+
+        <form class="d-flex d-me-block">
+
+            <select onclick="" id="selectForm" class="form-select me-1" aria-label="Default select example">
+                <option selected><center>Escoge una raza...</center></option>
+                <% for(var i=0; i<response.length; i++) {%>
+                    <option value="<%= response[i][0] %>"><%= response[i][0] %> </option>
+                <% } %>
+            </select>
+            
+            <a id="linkDog" class="btn btn-outline-success" type="submit" onclick="changeLink()">filtrar</a>
+        </form>
+
+    </div>
+
+
+    <br><br>
+
+    <div class="row">
+        <% for(var i=0; i<response.length; i++) {%>
+                <div class="col-6 mb-2">
+                    <div class="card">
+                        <a class="btn" href="photo/<%= response[i][0]  %> ">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="icon ion-md-paw"></i><center><%= response[i][0] %></center></h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+        <% } %>
+    </div>
+
+
+</div>
+
+
+
+<div class="container">
+    <hr>
+</div>
+
+
+
+<%- include('templates/footer', {tituloweb: 'Inicio EJS'}); %>

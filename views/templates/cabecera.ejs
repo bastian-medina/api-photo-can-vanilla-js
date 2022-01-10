@@ -9,12 +9,54 @@
     <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css">
 
     <!-- referencia a hoja de estilos por defecto -->
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- referencia a hoja de estilos por defecto -->
+    <link rel="stylesheet" href="/PhotoAreaPug.png">
+    
 
      <!-- Bootstrap CSS link -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>PhotoCan</title>
+
+    <script type="text/javascript">
+
+    function changeLink(){
+
+        var dog = document.getElementById("selectForm").value;
+        var link = document.getElementById("linkDog");
+
+        window.location = "http://localhost:3000/filterDog/"+dog; 
+
+
+
+    }
+
+    function changeLinkForm(){
+
+        var dog = document.getElementById("inputDog").value;
+        var link = document.getElementById("linkDog");
+        
+        
+        if(dog == "")
+        {
+            alert("complete los campos")
+        } else
+        {
+            window.location = "http://localhost:3000/filterDog/"+dog; 
+        }
+
+
+        return false;
+  
+
+    }
+
+    </script>
+
+
+
 </head>
 
 

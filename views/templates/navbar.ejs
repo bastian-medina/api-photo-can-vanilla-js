@@ -3,8 +3,8 @@
     <div class="container-fluid">
 
       <!-- icono pug -->
-      <a class="navbar-brand">
-        <img src="images/LogoPug.png" alt="" width="54" height="48" class="d-inline-block align-text-top">
+      <a href="index" class="navbar-brand">
+        <img src="/LogoPug.png" alt="" width="54" height="48" class="d-inline-block align-text-top">
         PhotoCan
       </a>
 
@@ -19,23 +19,23 @@
         <!-- lista de opciones -->
         <ul class="navbar-nav me-auto my-2 my-lg-0 ms-auto me-5 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item me-2">
-            <a class="nav-link text-center" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link text-center" aria-current="page" href="/">Inicio</a>
           </li>
           <li class="nav-item me-2">
-            <a class="nav-link text-center" href="#">Razas</a>
+            <a class="nav-link text-center" href="http://localhost:3000/razaList">Razas</a>
           </li>
           <li class="nav-item me-2">
-            <a class="nav-link text-center" href="#">SubRazas</a>
+            <a class="nav-link text-center" href="http://localhost:3000/subRazaList">SubRazas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-center" href="#">Foto Aleatoria</a>
+            <a class="nav-link text-center" href="http://localhost:3000/randomPhoto">Foto Aleatoria</a>
           </li>
         </ul>
 
         <!-- barra de busqueda -->
         <form class="d-flex d-me-block">
-          <input class="form-control me-2" type="search" placeholder="Buscar raza..." aria-label="Search" required>
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+          <input id="inputDog" class="form-control me-2" type="search" placeholder="Buscar raza..." aria-label="Search" required>
+          <a  class="btn btn-outline-success" type="submit" onclick="changeLinkForm()">Buscar</a>
         </form>
 
       </div>
@@ -49,7 +49,7 @@
 
     <!-- <img class="img-fluid" src="images/PhotoAreaPug.png" > -->
     <figure class="figure">
-        <img src="images/PhotoAreaPug.png" class="figure-img img-fluid rounded" alt="...">
+        <img src="/PhotoAreaPug.png" class="figure-img img-fluid rounded" alt="...">
     </figure>
 
 </div>
